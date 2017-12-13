@@ -26,8 +26,7 @@ output:
 ## Install the package
 ```{r Part0, echo=TRUE, warning=FALSE}
   # install.packages("devtools")
-  #library("devtools")
-  #devtools::install_github("kholsman/NRG")
+  #library("devtools");devtools::install_github("kholsman/NRG")
 
 ```
 
