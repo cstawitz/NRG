@@ -2,6 +2,5 @@
 
 export(Resp_fun)
 export(Waste_fun)
-export(cat_function)
-export(f.T)
 export(fTC_fun)
+export(fTc)
