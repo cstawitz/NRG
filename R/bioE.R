@@ -5,20 +5,17 @@
 #' kirstin.holsman@noaa.gov
 #' This function calculates the weight and tempature specific physiological rates given a set of parameters and data inputs. Predicts consumption or growth from a fit or set pvalue using model.type
 #' The model below is based on the "Wisconsin" Fish Bioenergetics model (Hanson et al. 1997)
-#' model.type =
-#' 1) fit to observed growth by adjusting P-value
-#' 2) predict growth from set p-value (in par)
 #' @param par is a list of parameters used for the model
 #' @param data is a list with inputs for the model including a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param W  weight of the fish in grams
 #' @param TempC  is the temperature the fish experiences (in deg C)
-#' @param Eprey is the energey density of the prey in Joules per gram of prey
-#' @param Epred is the energey density of the fish predator in Joules per gram of pred
-#' @param indgst is the indigestable proportion of each prey item in the diet
-#' @param diet is the proportion by weight of each prey item in the diet
-#' @param fTCmodel is the optional user specified function for the temperature scaling component of C; set to NA by default
-#' @param fTrmodelis the optional user specified function for the temperature scaling component of R; set to NA by default
-#' @param velmodel the optional user specified function for the temperature scaling component of swim velocity; set to NA by default
+#' @param Eprey  is the energey density of the prey in Joules per gram of prey
+#' @param Epred  is the energey density of the fish predator in Joules per gram of pred
+#' @param indgst  is the indigestable proportion of each prey item in the diet
+#' @param diet  is the proportion by weight of each prey item in the diet
+#' @param fTCmodel  is the optional user specified function for the temperature scaling component of C; set to NA by default
+#' @param fTrmodel  the optional user specified function for the temperature scaling component of R; set to NA by default
+#' @param velmodel  the optional user specified function for the temperature scaling component of swim velocity; set to NA by default
 #' @keywords Temperature, scaling, consumption
 #' @export bioE
 #' @examples
@@ -27,7 +24,7 @@
 #' ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0,fTCmodel=NA,fTrmodel=NA,velmodel=NA)
 #' bioE(data=ebs_data,par=plk_par)
 #' fTfun()
-#13.56 J mg-1 Brett & Groves 1979 Qox for Fish 
+#'13.56 J mg-1 Brett & Groves 1979 Qox for Fish 
 
 bioE<-function(par,data=list(W,TempC,Eprey,Epred,indgst,diet,fTCmodel=NA,fTrmodel=NA,velmodel=NA)){
   # data

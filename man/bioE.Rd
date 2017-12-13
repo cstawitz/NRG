@@ -26,7 +26,7 @@ bioE(par, data = list(W, TempC, Eprey, Epred, indgst, diet, fTCmodel = NA,
 
 \item{fTCmodel}{is the optional user specified function for the temperature scaling component of C; set to NA by default}
 
-\item{fTrmodelis}{the optional user specified function for the temperature scaling component of R; set to NA by default}
+\item{fTrmodel}{the optional user specified function for the temperature scaling component of R; set to NA by default}
 
 \item{velmodel}{the optional user specified function for the temperature scaling component of swim velocity; set to NA by default}
 }
@@ -35,9 +35,6 @@ Rcode developed by: Kirstin Holsman
 kirstin.holsman@noaa.gov
 This function calculates the weight and tempature specific physiological rates given a set of parameters and data inputs. Predicts consumption or growth from a fit or set pvalue using model.type
 The model below is based on the "Wisconsin" Fish Bioenergetics model (Hanson et al. 1997)
-model.type =
-1) fit to observed growth by adjusting P-value
-2) predict growth from set p-value (in par)
 }
 \examples{
 plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46, 
@@ -45,6 +42,7 @@ plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0
 ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0,fTCmodel=NA,fTrmodel=NA,velmodel=NA)
 bioE(data=ebs_data,par=plk_par)
 fTfun()
+13.56 J mg-1 Brett & Groves 1979 Qox for Fish 
 }
 \keyword{Temperature,}
 \keyword{consumption}
