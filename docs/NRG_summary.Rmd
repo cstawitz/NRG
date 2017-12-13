@@ -26,8 +26,8 @@ output:
 ## Install the package
 ```{r Part0, echo=TRUE, warning=FALSE}
   # install.packages("devtools")
-  library("devtools")
-  devtools::install_github("kholsman/NRG")
+  #library("devtools")
+  #devtools::install_github("kholsman/NRG")
 
 ```
 
@@ -37,14 +37,13 @@ output:
 ```{r Part1, echo=TRUE, warning=FALSE}
   rm(list=ls())
   graphics.off()
-  setwd("/Users/kholsman/GitHub/NRG")
+  setwd("/Users/kholsman/GitHub/NRG/NRG")
   ## some data for Halibut
-    #load("data/HalibutC.Rdata")
-    #load("Halibut_results.Rdata")
-    #load("data/alldat4B.Rdata")
-    #load("data/alldatA3.Rdata")
-    #load("data/alldat4CD.Rdata")
-    #source("R/bioE.R")
+    load("data/HalibutC.Rdata")
+    load("data/alldat4B.Rdata")
+    load("data/alldatA3.Rdata")
+    load("data/alldat4CD.Rdata")
+    source("R/bioE.R")
   # Set up some parms
     hal_par<-list(Ceq=2,Req=1,Weq=1,RFR=1,Qox=13560,CA=0.0627,CB=-0.108,Tco=12.9699,
                   Tcm=18,QC=3.084,RK4=0.3729,RK1=0.008,Am=0.008,Bact=0.2215,
@@ -104,6 +103,7 @@ output:
     Waste_fun(par=PARMS_USE,data=w_dat)
   
   # now put it all together for halibut
+  
     tt<-bioE(par=hal_par,data=ebs_data)
 
     plot(tt[[2]]$TempC,tt[[2]]$C_ggd*100,type="l",lwd=2,ylim=c(-1,5),xlim=c(-4,20));abline(h=0,lty=3)

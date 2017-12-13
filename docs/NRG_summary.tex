@@ -127,6 +127,16 @@
 \begin{document}
 \maketitle
 
+\subsection{Install the package}\label{install-the-package}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \CommentTok{# install.packages("devtools")}
+  \CommentTok{#library("devtools")}
+  \CommentTok{#devtools::install_github("kholsman/NRG")}
+\end{Highlighting}
+\end{Shaded}
+
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \subsection{Part 1: Set up}\label{part-1-set-up}
@@ -135,10 +145,9 @@
 \begin{Highlighting}[]
   \KeywordTok{rm}\NormalTok{(}\DataTypeTok{list=}\KeywordTok{ls}\NormalTok{())}
   \KeywordTok{graphics.off}\NormalTok{()}
-  \KeywordTok{setwd}\NormalTok{(}\StringTok{"/Users/kholsman/GitHub/NRG"}\NormalTok{)}
+  \KeywordTok{setwd}\NormalTok{(}\StringTok{"/Users/kholsman/GitHub/NRG/NRG"}\NormalTok{)}
   \NormalTok{## some data for Halibut}
     \KeywordTok{load}\NormalTok{(}\StringTok{"data/HalibutC.Rdata"}\NormalTok{)}
-    \CommentTok{#load("Halibut_results.Rdata")}
     \KeywordTok{load}\NormalTok{(}\StringTok{"data/alldat4B.Rdata"}\NormalTok{)}
     \KeywordTok{load}\NormalTok{(}\StringTok{"data/alldatA3.Rdata"}\NormalTok{)}
     \KeywordTok{load}\NormalTok{(}\StringTok{"data/alldat4CD.Rdata"}\NormalTok{)}
@@ -238,6 +247,7 @@ functions}\label{part-2-explore-main-functions}
 \begin{Shaded}
 \begin{Highlighting}[]
   \CommentTok{# now put it all together for halibut}
+  
     \NormalTok{tt<-}\KeywordTok{bioE}\NormalTok{(}\DataTypeTok{par=}\NormalTok{hal_par,}\DataTypeTok{data=}\NormalTok{ebs_data)}
 
     \KeywordTok{plot}\NormalTok{(tt[[}\DecValTok{2}\NormalTok{]]$TempC,tt[[}\DecValTok{2}\NormalTok{]]$C_ggd*}\DecValTok{100}\NormalTok{,}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{,}\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{,}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(-}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(-}\DecValTok{4}\NormalTok{,}\DecValTok{20}\NormalTok{));}\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\DecValTok{0}\NormalTok{,}\DataTypeTok{lty=}\DecValTok{3}\NormalTok{)}
