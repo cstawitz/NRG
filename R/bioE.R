@@ -12,7 +12,7 @@
 #' @param data is a list with a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param data$W  weight of the fish in grams
 #' @keywords Temperature, scaling, consumption
-#' @export
+#' @export bioE
 #' @examples
 #' plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46, 
 #'                     RA=0.0075,RB=-0.251, QR=2.6,Tro=13,Trm=18,SA=0.125, Am=2,FA=0.15,UA=0.11)
@@ -142,7 +142,7 @@ bioE<-function(par,data=list(W,TempC,Eprey,Epred,indgst,diet,fTCmodel=NA,fTrmode
 #' @param data is a list with a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param data$W  weight of the fish in grams
 #' @keywords Temperature, scaling, Respiration
-#' @export 
+#' @export Resp_fun
 #' @examples
 #' Resp_fun()
 
@@ -210,7 +210,7 @@ Resp_fun<-function(par,data){
 #' @param data is a list with a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param data$W  weight of the fish in grams
 #' @keywords Temperature, scaling, Respiration
-#' @export 
+#' @export Waste_fun
 #' @examples
 #' Waste_fun()
 
@@ -258,7 +258,7 @@ Waste_fun<-function(par,data){
 #' @param data is a list with a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param Ceq is a par list object (par$Ceq) that specifies the type of consumption equation to use: 0 = specify function using data$fTCmodel, 1= exponential (type 1 from Fish Bioenergetics), 2 = type 2, 3 = type 3
 #' @keywords Temperature, scaling, Respiration
-#' @export 
+#' @export fTC_fun
 #' @examples
 #' c_data<-ebs_data
 #' c_data$fTCmodel<-function(TempC){-.5*TempC}
