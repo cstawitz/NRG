@@ -9,18 +9,26 @@
 #' 1) fit to observed growth by adjusting P-value
 #' 2) predict growth from set p-value (in par)
 #' @param par is a list of parameters used for the model
-#' @param data is a list with a daily observation of weight, temperature, prey energy density, and predator energy density
-#' @param data$W  weight of the fish in grams
+#' @param data is a list with inputs for the model including a daily observation of weight, temperature, prey energy density, and predator energy density
+#' @param W  weight of the fish in grams
+#' @param TempC  is the temperature the fish experiences (in deg C)
+#' @param Eprey is the energey density of the prey in Joules per gram of prey
+#' @param Epred is the energey density of the fish predator in Joules per gram of pred
+#' @param indgst is the indigestable proportion of each prey item in the diet
+#' @param diet is the proportion by weight of each prey item in the diet
+#' @param fTCmodel is the optional user specified function for the temperature scaling component of C; set to NA by default
+#' @param fTrmodelis the optional user specified function for the temperature scaling component of R; set to NA by default
+#' @param velmodel the optional user specified function for the temperature scaling component of swim velocity; set to NA by default
 #' @keywords Temperature, scaling, consumption
 #' @export bioE
 #' @examples
 #' plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46, 
 #'                     RA=0.0075,RB=-0.251, QR=2.6,Tro=13,Trm=18,SA=0.125, Am=2,FA=0.15,UA=0.11)
-#' ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0)
+#' ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0,fTCmodel=NA,fTrmodel=NA,velmodel=NA)
 #' bioE(data=ebs_data,par=plk_par)
-
 #' fTfun()
 #13.56 J mg-1 Brett & Groves 1979 Qox for Fish 
+
 bioE<-function(par,data=list(W,TempC,Eprey,Epred,indgst,diet,fTCmodel=NA,fTrmodel=NA,velmodel=NA)){
   # data
   W<-data$W
