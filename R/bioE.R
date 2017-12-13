@@ -12,7 +12,7 @@
 #' @param data is a list with a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param data$W  weight of the fish in grams
 #' @keywords Temperature, scaling, consumption
-#' @export fTc
+#' @export
 #' @examples
 #' plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46, 
 #'                     RA=0.0075,RB=-0.251, QR=2.6,Tro=13,Trm=18,SA=0.125, Am=2,FA=0.15,UA=0.11)
