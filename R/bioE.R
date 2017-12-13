@@ -61,9 +61,13 @@ bioE<-function(par,data=list(W,TempC,Eprey,Epred,indgst,diet,fTCmodel=NA,fTrmode
   Rmax_gO2_g_d<-RA*W^RB 		# max Resp in g O2/g fish /d
   R_gO2_gd<-Rmax_gO2_g_d*fTr # max Resp in g O2/g fish /d
   R_jgd<-R_gO2_gd*(Qox)*Act  		# Resp in j per g fish / d
+  
   # Growth	
   G_jgd<-(C_jgd-(R_jgd+SDA_jgd+F_jgd+U_jgd))  # Growth J fish /g fish /day
   G_ggd<-G_jgd/Epred  							# Growth in g fish /g fish /day
+  # add a term to allocate lipids to Epred<-fn()
+  # add a term for the remainder to be G
+  # k as a function of temperature ? rather than constant
   
   # return(G)
   return(list(

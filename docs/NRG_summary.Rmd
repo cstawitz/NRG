@@ -69,6 +69,7 @@ output:
     c_data<-ebs_data
     c_data$fTCmodel<-function(TempC){-.5*TempC}
     ft<-fTC_fun(par=PARMS_USE,data=c_data)
+    
   # plot the function
     ylimm<-list();ylimm[[1]]<-c(0,1.2)
     plot(ebs_data$TempC,ft,type="l",xlim=c(0,18), ylim=ylimm[[1]],axes=FALSE,ylab="",xlab="",lwd=2)
@@ -117,8 +118,8 @@ output:
     tt2<-tt
     plot(tt2[[2]]$TempC,tt2[[2]]$C_ggd*100,type="l",lwd=2,ylim=c(-1,5));abline(h=0,lty=3)
     lines(tt2[[2]]$TempC,tt2[[2]]$G_ggd*100,type="l",lwd=2,col="red")
-    lines(tt2[[2]]$TempC,tt2[[2]]$SDA_ggd*100,type="l",lwd=2,col="lightblue")
-    lines(tt2[[2]]$TempC,tt2[[2]]$R_ggd*100,type="l",lwd=2,col="blue")
+    lines(tt2[[2]]$TempC,tt2[[2]]$SDA_ggd*100,type="l",lwd=2,col="blue")
+    lines(tt2[[2]]$TempC,tt2[[2]]$R_ggd*100,type="l",lwd=2,col="lightblue")
     lines(tt2[[2]]$TempC,tt2[[2]]$U_ggd*100,type="l",lwd=2,col="purple")
     lines(tt2[[2]]$TempC,tt2[[2]]$F_ggd*100,type="l",lwd=2,col="green")
 ```
@@ -300,17 +301,7 @@ output:
                 hessian=TRUE,control=list(maxit=1e6))
       vc <- solve(m$hessian)
       se<-(sqrt(diag(vc)))
-      # not working
-       #abline(v=exp(m$par[1])+1.95*exp(se[1])); abline(v=exp(m$par[1])-1.95*exp(se[1]))
-      # p1<-p2<-PARMS_USE
-      # p1$Tco<-as.numeric(exp(m$par[1]+1*se[1]))
-      # p1$QC<-as.numeric(exp(m$par[2]+1*se[2]))
-      # p2$Tco<-as.numeric(exp(m$par[1]-1*se[1]))
-      # p2$QC<-as.numeric(exp(m$par[2]-1*se[2]))
-      # lines(ebs_data$TempC,fTC_fun(par=p1,data=c_data))
-      # lines(ebs_data$TempC,fTC_fun(par=p2,data=c_data))
-      # 
-      
+
       # compare values
       round(exp(m$par),3)
       hal_par$Tco
