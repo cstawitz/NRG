@@ -13,10 +13,20 @@ Resp_fun(par, data)
 \item{data}{is a list with a daily observation of weight, temperature, prey energy density, and predator energy density}
 
 \item{data$W}{weight of the fish in grams}
+
+\item{data$Am}{weight of the fish in grams}
+
+\item{data$TempC}{Temperature}
 }
 \description{
 Rcode developed by: Kirstin Holsman
 kirstin.holsman@noaa.gov
+}
+\details{
+#' Based on the Fish Bioenergetics Model 3.0, see update 4.0 by Deslauriers, D., 
+Chipps, S.R., Breck, J.E., Rice, J.A. & Madenjian, C.P. 2017. Fish Bioenergetics 4.0: 
+An R- based modeling application. Fisheries, 42(11): 586–596.
+
 This function calculates the weight and tempature specific physiological rates given a set of parameters and data inputs. 
 The model below is based on the "Wisconsin" Fish Bioenergetics model (Hanson et al. 1997)
 }

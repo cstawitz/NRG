@@ -12,6 +12,8 @@ fTC_fun(par, data)
 
 \item{data}{is a list with a daily observation of weight, temperature, prey energy density, and predator energy density}
 
+\item{data$TempC}{Temperature}
+
 \item{Ceq}{is a par list object (par$Ceq) that specifies the type of consumption equation to use: 0 = specify function using data$fTCmodel, 1= exponential (type 1 from Fish Bioenergetics), 2 = type 2, 3 = type 3}
 }
 \description{

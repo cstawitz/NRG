@@ -33,6 +33,11 @@ bioE(par, data = list(W, TempC, Eprey, Epred, indgst, diet, fTCmodel = NA,
 \description{
 Rcode developed by: Kirstin Holsman
 kirstin.holsman@noaa.gov
+Based on the Fish Bioenergetics Model 3.0, see update 4.0 by Deslauriers, D., 
+Chipps, S.R., Breck, J.E., Rice, J.A. & Madenjian, C.P. 2017. Fish Bioenergetics 4.0: 
+An R- based modeling application. Fisheries, 42(11): 586–596.
+}
+\details{
 This function calculates the weight and tempature specific physiological rates given a set of parameters and data inputs. Predicts consumption or growth from a fit or set pvalue using model.type
 The model below is based on the "Wisconsin" Fish Bioenergetics model (Hanson et al. 1997)
 }
