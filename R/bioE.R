@@ -10,6 +10,15 @@
 #' This function calculates the weight and tempature specific physiological rates given a set of parameters and data inputs. Predicts consumption or growth from a fit or set pvalue using model.type
 #' The model below is based on the "Wisconsin" Fish Bioenergetics model (Hanson et al. 1997)
 #' @param par is a list of parameters used for the model
+#' @param par$Qox oxycaloric value of 13.56 J O2mg-1 from Brett & Groves 1979 Qox for Fish 
+#' @param Ceq Consumption equation
+#' @param RFR Relative foraging rate
+#' @param RA Respiration intercept
+#' @param RB Respiration slope
+#' @param SA Specific dynamic action
+#' @param CA Intercept of the consumption function
+#' @param CB Slope of the consumption function
+#' @param par$Vel velocity parameter
 #' @param data is a list with inputs for the model including a daily observation of weight, temperature, prey energy density, and predator energy density
 #' @param W  weight of the fish in grams
 #' @param TempC  is the temperature the fish experiences (in deg C)
@@ -28,7 +37,6 @@
 #' ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0,fTCmodel=NA,fTrmodel=NA,velmodel=NA)
 #' bioE(data=ebs_data,par=plk_par)
 #' fTfun()
-#'13.56 J mg-1 Brett & Groves 1979 Qox for Fish 
 
 bioE<-function(par,data=list(W,TempC,Eprey,Epred,indgst,diet,fTCmodel=NA,fTrmodel=NA,velmodel=NA)){
   # data
