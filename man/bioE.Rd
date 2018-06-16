@@ -12,6 +12,24 @@ bioE(par, data = list(W, TempC, Eprey, Epred, indgst, diet, fTCmodel = NA,
 
 \item{data}{is a list with inputs for the model including a daily observation of weight, temperature, prey energy density, and predator energy density}
 
+\item{par$Qox}{oxycaloric value of 13.56 J O2mg-1 from Brett & Groves 1979 Qox for Fish}
+
+\item{Ceq}{Consumption equation}
+
+\item{RFR}{Relative foraging rate}
+
+\item{RA}{Respiration intercept}
+
+\item{RB}{Respiration slope}
+
+\item{SA}{Specific dynamic action}
+
+\item{CA}{Intercept of the consumption function}
+
+\item{CB}{Slope of the consumption function}
+
+\item{par$Vel}{velocity parameter}
+
 \item{W}{weight of the fish in grams}
 
 \item{TempC}{is the temperature the fish experiences (in deg C)}
@@ -33,8 +51,8 @@ bioE(par, data = list(W, TempC, Eprey, Epred, indgst, diet, fTCmodel = NA,
 \description{
 Rcode developed by: Kirstin Holsman
 kirstin.holsman@noaa.gov
-Based on the Fish Bioenergetics Model 3.0, see update 4.0 by Deslauriers, D., 
-Chipps, S.R., Breck, J.E., Rice, J.A. & Madenjian, C.P. 2017. Fish Bioenergetics 4.0: 
+Based on the Fish Bioenergetics Model 3.0, see update 4.0 by Deslauriers, D.,
+Chipps, S.R., Breck, J.E., Rice, J.A. & Madenjian, C.P. 2017. Fish Bioenergetics 4.0:
 An R- based modeling application. Fisheries, 42(11): 586–596.
 }
 \details{
@@ -42,12 +60,11 @@ This function calculates the weight and tempature specific physiological rates g
 The model below is based on the "Wisconsin" Fish Bioenergetics model (Hanson et al. 1997)
 }
 \examples{
-plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46, 
+plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46,
                     RA=0.0075,RB=-0.251, QR=2.6,Tro=13,Trm=18,SA=0.125, Am=2,FA=0.15,UA=0.11)
 ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0,fTCmodel=NA,fTrmodel=NA,velmodel=NA)
 bioE(data=ebs_data,par=plk_par)
 fTfun()
-13.56 J mg-1 Brett & Groves 1979 Qox for Fish 
 }
 \keyword{Temperature,}
 \keyword{consumption}

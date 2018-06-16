@@ -19,6 +19,8 @@ par
 
 \item{JEAm}{Maximum assimilation rate per surface area (mmol d-1 cm-2)}
 
+\item{yVE}{Yield of structure from reserve in growth, yVE (dimensionless)}
+
 \item{kj}{Fraction of maturity maintenancec (d-1), temperature dependent}
 
 \item{EpH}{Maturity energy at puberty (kJ)}
@@ -44,7 +46,7 @@ par
 \item{pR}{Energy density of roe (kJ g-1)}
 }
 \description{
-Rcode developed by: Kirstin Holsman  
+Rcode developed by: Kirstin Holsman
 kirstin.holsman@noaa.gov
 This function calculates the dynamic energy budget as outlined by B. Einarsson et al. / Journal of Theoretical Biology 281 (2011) 1–8
 According to DEB theory, each individual allocates a fixed
@@ -52,11 +54,11 @@ fraction k of utilized energy from reserves to growth and somatic
 maintenance. The rest, (1-k), is then allocated to maturity maintenance and reproduction.
 }
 \examples{
-plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46, 
+plk_par<-data.frame(RFR=1, Qox=13560,Ceq=2,Req=2,Weq=1,Tco=10,Tcm=15,QC=2.6,CA=0.119,CB=-0.46,
                     RA=0.0075,RB=-0.251, QR=2.6,Tro=13,Trm=18,SA=0.125, Am=2,FA=0.15,UA=0.11)
 ebs_data<-list(W=100,TempC=0:10,Eprey=5539.6,Epred=4184,indgst=0,diet=0,fTCmodel=NA,fTrmodel=NA,velmodel=NA)
 bioE(data=ebs_data,par=plk_par)
-fTfun() 
+fTfun()
 }
 \keyword{Temperature,}
 \keyword{consumption}
