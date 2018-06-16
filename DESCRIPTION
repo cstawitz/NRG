@@ -1,10 +1,13 @@
 Package: NRG
-Title: What the Package Does (one line, title case)
+Title: Fish and Crab Bioenergetics Modeling
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Kirstin", "Holsman", email = "kirstin.holsman@noaa.gov", role = c("aut", "cre"))
+Description: This is a package to calculate growth based on energy intake and expenditures
+using bioenergetics equations, based on the Fish Bioenergetics Model 3.0, see update 4.0 by Deslauriers, D., 
+Chipps, S.R., Breck, J.E., Rice, J.A. & Madenjian, C.P. 2017. Fish Bioenergetics 4.0: 
+An R- based modeling application. Fisheries, 42(11): 586–596. 
 Depends: R (>= 3.4.1)
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1.9000
